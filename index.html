@@ -10,15 +10,41 @@
 function getComputerChoice() {
     const number = Math.floor(Math.random() * 3) + 1;
         if (number === 1) {
-            return "Rock";
+            return "rock";
         } else if (number === 2) {
-            return "Paper";
+            return "paper";
         } else {
-            return "Scissors";
+            return "scissors";
         }
 }
-console.log(getComputerChoice());
 
+
+function oneRound(playerSelection, computerSelection) {
+    playerSelection = prompt("Choose and type out \"Rock, Paper or Scissors\": ").toLowerCase();
+    computerSelection = getComputerChoice();
+
+    if (playerSelection === computerSelection) {
+        return " It's a tie!";
+    } else if ( playerSelection === "rock" && computerSelection === "paper") {
+        return " You Lose! Paper beats Rock";
+
+    } else if ( playerSelection === "paper" && computerSelection === "scissors") {
+        return " You Lose! Scissors beat Paper";
+
+    } else if ( playerSelection === "scissors" && computerSelection === "rock") {
+        return " You Lose! Rock beats Scissors";
+
+    } else if ( playerSelection === "rock" && computerSelection === "scissors") {
+        return " You win! Rock beats Scissors";
+
+    } else if ( playerSelection === "paper" && computerSelection === "rock") {
+        return " You win! Paper beats Rock";
+
+    } else /* if ( playerSelection === "scissors" && computerSelection === "paper") */{
+        return "You win! Scissors beat Paper!";
+    }
+    }
+console.log(oneRound());
 
     </script>
 </body>
