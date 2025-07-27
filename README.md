@@ -1,2 +1,2 @@
 # rock-paper-scissors
-simpel gam
+simple game
